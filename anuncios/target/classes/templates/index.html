@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Anúncios</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Anúncios</h1>
+        <a href="/anuncios/novo" class="btn btn-primary">Novo Anúncio</a>
+        <div th:each="anuncio : ${anuncios}">
+            <h2 th:text="${anuncio.titulo}"></h2>
+            <p th:text="${anuncio.descricao}"></p>
+            <img th:src="@{${anuncio.fotoUrl}}" alt="Foto do Anúncio" width="200"/>
+            <p>Pago: <span th:text="${anuncio.pago}"></span></p>
+        </div>
+    </div>
+</body>
+</html>
